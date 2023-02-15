@@ -15,8 +15,8 @@
     "@tabler/icons": "^1.119.0",
     "apexcharts": "^3.37.0",
     "formik": "^2.2.9",
-    "framer-motion": "^6.5.1",
-    "material-ui-popup-state": "^4.1.0",
+    "framer-motion": "^9.0.3",
+    "material-ui-popup-state": "^5.0.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
@@ -28,7 +28,7 @@
     "react-router-dom": "6.8.1",
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
-    "yup": "^0.32.11"
+    "yup": "^1.0.0"
   },
   "scripts": {
     "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,html,css,scss}\"",
