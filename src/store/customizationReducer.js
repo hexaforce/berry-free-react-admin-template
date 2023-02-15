@@ -1,14 +1,11 @@
-// project imports
-import config from 'config'
-
 // action - state management
 import * as actionTypes from './actions'
 
 export const initialState = {
   isOpen: [], // for active default menu
   defaultId: 'default',
-  fontFamily: config.fontFamily,
-  borderRadius: config.borderRadius,
+  fontFamily: `'Roboto', sans-serif`,
+  borderRadius: 12,
   opened: true,
 }
 

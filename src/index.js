@@ -6,14 +6,49 @@ import { Provider } from 'react-redux'
 
 // project imports
 import * as serviceWorker from 'serviceWorker'
-import App from 'App'
+
 import { store } from 'store'
 
 // style + assets
 import 'assets/scss/style.scss'
-import config from './config'
 
-// ==============================|| REACT DOM RENDER  ||============================== //
+import { useSelector } from 'react-redux'
+
+import { ThemeProvider } from '@mui/material/styles'
+import { CssBaseline, StyledEngineProvider } from '@mui/material'
+
+// routing
+import Routes from 'routes'
+
+// defaultTheme
+import themes from 'themes'
+
+// project imports
+import NavigationScroll from 'layout/NavigationScroll'
+
+const App = () => {
+  const customization = useSelector((state) => state.customization)
+
+  return (
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={themes(customization)}>
+        <CssBaseline />
+        <NavigationScroll>
+          <Routes />
+        </NavigationScroll>
+      </ThemeProvider>
+    </StyledEngineProvider>
+  )
+}
+
+export const config = {
+  // basename: only at build time to set, and Don't add '/' at end off BASENAME for breadcrumbs, also Don't put only '/' use blank('') instead,
+  // like '/berry-material-react/react/default'
+  basename: '/free',
+  defaultPath: '/dashboard/default',
+  fontFamily: `'Roboto', sans-serif`,
+  borderRadius: 12,
+}
 
 const container = document.getElementById('root')
 const root = createRoot(container) // createRoot(container!) if you use TypeScript
@@ -24,8 +59,4 @@ root.render(
     </BrowserRouter>
   </Provider>,
 )
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister()

@@ -53,7 +53,6 @@ const NavCollapse = ({ menu, level }) => {
         }
       })
     }
-
   }, [pathname, menu.children])
 
   // menu collapse & item
